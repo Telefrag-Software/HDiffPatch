@@ -708,9 +708,9 @@ static void __dec_free(void* _, void* address){
 
 #if (defined _CompressPlugin_lzma) || (defined _CompressPlugin_lzma2)
 #if (_IsNeedIncludeDefaultCompressHead)
-#   include "LzmaDec.h" // "lzma/C/LzmaDec.h" https://github.com/sisong/lzma
+#   include <SevenZip/C/LzmaDec.h>
 #   ifdef _CompressPlugin_lzma2
-#       include "Lzma2Dec.h"
+#       include <SevenZip/C/Lzma2Dec.h>
 #   endif
 #endif
 #endif
@@ -942,8 +942,8 @@ static void __dec_free(void* _, void* address){
 
 #ifdef _CompressPlugin_7zXZ
 #if (_IsNeedIncludeDefaultCompressHead)
-#   include "Xz.h" // "lzma/C/Xz.h" https://github.com/sisong/lzma
-#   include "7zCrc.h" // CrcGenerateTable()
+#   include <SevenZip/C/Xz.h>
+#   include <SevenZip/C/7zCrc.h> // CrcGenerateTable()
 #endif
 
 #ifndef _init_CompressPlugin_7zXZ_DEF

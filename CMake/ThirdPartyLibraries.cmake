@@ -1,0 +1,17 @@
+include_guard()
+
+hunter_add_package(BZip2)
+hunter_add_package(libdeflate)
+hunter_add_package(LibMD5-RFC)
+hunter_add_package(SevenZip)
+hunter_add_package(xxHash)
+hunter_add_package(ZLIB)
+hunter_add_package(zstd)
+
+find_package(BZip2 CONFIG REQUIRED)
+find_package(libdeflate CONFIG REQUIRED)
+find_package(LibMD5-RFC CONFIG REQUIRED)
+find_package(SevenZip CONFIG REQUIRED)
+find_package(xxHash CONFIG REQUIRED)
+find_package(ZLIB CONFIG REQUIRED)
+find_package(zstd CONFIG REQUIRED)

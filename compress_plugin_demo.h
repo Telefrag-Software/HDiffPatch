@@ -393,7 +393,7 @@ int _default_setParallelThreadNumber(hdiff_TCompress* compressPlugin,int threadN
 
 #ifdef  _CompressPlugin_ldef
 #if (_IsNeedIncludeDefaultCompressHead)
-#   include "libdeflate.h" // "libdeflate/libdeflate.h" https://github.com/sisong/libdeflate/tree/stream-mt based on https://github.com/ebiggers/libdeflate
+#   include <libdeflate.h> // https://github.com/ebiggers/libdeflate
 #endif
     static const signed char _ldef_kWindowBits=-15; //always as zlib's windowBits -15
     static const size_t _ldef_kDictSize=(1<<15);
@@ -677,9 +677,9 @@ int _default_setParallelThreadNumber(hdiff_TCompress* compressPlugin,int threadN
 
 #if (defined _CompressPlugin_lzma)||(defined _CompressPlugin_lzma2)||(defined _CompressPlugin_7zXZ)
 #if (_IsNeedIncludeDefaultCompressHead)
-#   include "LzmaEnc.h" // "lzma/C/LzmaEnc.h" https://github.com/sisong/lzma
+#   include <SevenZip/C/LzmaEnc.h>
 #   ifdef _CompressPlugin_lzma2
-#       include "Lzma2Enc.h"
+#       include <SevenZip/C/Lzma2Enc.h>
 #   endif
 #endif
     static void * __lzma_enc_Alloc(ISzAllocPtr p, size_t size){
@@ -811,7 +811,7 @@ int _default_setParallelThreadNumber(hdiff_TCompress* compressPlugin,int threadN
     
 #ifdef  _CompressPlugin_lzma2
 #if (_IsNeedIncludeDefaultCompressHead)
-#   include "MtCoder.h" // "lzma/C/MtCoder.h"   for MTCODER__THREADS_MAX
+#   include <SevenZip/C/MtCoder.h> // "lzma/C/MtCoder.h"   for MTCODER__THREADS_MAX
 #endif
     struct TCompressPlugin_lzma2{
         hdiff_TCompress base;
@@ -890,9 +890,9 @@ int _default_setParallelThreadNumber(hdiff_TCompress* compressPlugin,int threadN
 
 #ifdef  _CompressPlugin_7zXZ
 #if (_IsNeedIncludeDefaultCompressHead)
-#   include "XzEnc.h" // "lzma/C/XzEnc.h" https://github.com/sisong/lzma
-#   include "MtCoder.h" // "lzma/C/MtCoder.h"   for MTCODER__THREADS_MAX
-#   include "7zCrc.h" // CrcGenerateTable()
+#   include <SevenZip/C/XzEnc.h>
+#   include <SevenZip/C/MtCoder.h> // for MTCODER__THREADS_MAX
+#   include <SevenZip/C/7zCrc.h> // CrcGenerateTable()
 #endif
 
 #ifndef _init_CompressPlugin_7zXZ_DEF

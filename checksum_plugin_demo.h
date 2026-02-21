@@ -321,7 +321,7 @@ static hpatch_TChecksum fadler128ChecksumPlugin={ _fadler128_checksumType,_fadle
 
 #ifdef  _ChecksumPlugin_md5
 #if (_IsNeedIncludeDefaultChecksumHead)
-#   include "md5.h" // https://sourceforge.net/projects/libmd5-rfc  https://github.com/sisong/libmd5
+#   include <md5.h> // https://sourceforge.net/projects/libmd5-rfc
 #endif
 static const char* _md5_checksumType(void){
     static const char* type="md5";
@@ -709,7 +709,7 @@ static hpatch_TChecksum sha512ChecksumPlugin={ _sha512_checksumType,_sha512_chec
 #ifdef __cplusplus
 extern "C" {
 #endif
-#   include "xxh3.h" // https://github.com/Cyan4973/xxHash/blob/master/xxh3.h
+#   include <xxh3.h> // https://github.com/Cyan4973/xxHash/blob/master/xxh3.h
 #ifdef __cplusplus
 }
 #endif
